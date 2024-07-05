@@ -2,13 +2,15 @@ package lesson20;
 
 public class Main {
     public static void main(String[] args) {
-//        Human child = new Human("Stephan","Tyson",2005);
-//        Human mother = new Human("Clara","Diana",1957);
-//        Human father = new Human("Mike","Tyson",1966);
-//        child.setPet(new Pet("Charly"));
-//        child.setMother(mother);
-//        child.setFather(father);
         Human father = new Human("John","Smith",1957);
+
+        father.fillSchedule(DayOfWeek.MONDAY);
+        father.fillSchedule(DayOfWeek.WEDNESDAY);
+        father.fillSchedule(DayOfWeek.FRIDAY);
+
+        // Print father's schedule
+        father.printSchedule();
+
         Human mother = new Human("Clara","Smith",1959);
         Familiy familiy = new Familiy(mother,father,3);
         Human child1 = new Human("Niko","Katare",1988);

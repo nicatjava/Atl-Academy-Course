@@ -2,7 +2,7 @@ package lesson20;
 
 public class Pet {
 
-    private String species;
+    private Species animalType;
     private String nickname;
     private int age;
     private int trickLevel;
@@ -14,8 +14,8 @@ public class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(String species, String nickname, int age, int trickLevel) {
-        this.species = species;
+    public Pet(Species animalType, String nickname, int age, int trickLevel) {
+        this.animalType = animalType;
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
@@ -33,12 +33,12 @@ public class Pet {
         System.out.println("I need to cover it up");
     }
 
-    public String getSpecies() {
-        return species;
+    public Species getAnimalType() {
+        return animalType;
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
+    public void setAnimalType(Species animalType) {
+        this.animalType = animalType;
     }
 
     public String getNickname() {
@@ -67,7 +67,7 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet [species=" + species + ", nickname=" + nickname + ", age=" + age + ", trickLevel=" + trickLevel+"]";
+        return "Pet [animalType=" + animalType + ", nickname=" + nickname + ", age=" + age + ", trickLevel=" + trickLevel + "]";
     }
-
 }
+

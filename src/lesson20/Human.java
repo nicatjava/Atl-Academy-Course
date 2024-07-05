@@ -8,6 +8,7 @@ public class Human {
     private Pet pet;
     private Human mother;
     private Human father;
+    private DayOfWeek[] schedule = new DayOfWeek[7];
 
     public Human() {
     }
@@ -36,13 +37,28 @@ public class Human {
         this.father = father;
     }
 
+    public void fillSchedule(DayOfWeek day) {
+        // Assuming only one slot per day for simplicity
+        int index = day.ordinal(); // Get the index of the day in the enum
+        schedule[index] = day;
+    }
+
+    public void printSchedule() {
+        System.out.println("Schedule for " + name + " " + surname + ":");
+        for (int i = 0; i < schedule.length; i++) {
+            if (schedule[i] != null) {
+                System.out.println(schedule[i].name()); // Using name() method of enum
+            }
+        }
+    }
+
     public void greetPet(){
         System.out.println("Hello, "+pet.getNickname());
     }
 
     public void describePet(){
         String msg = pet.getTrickLevel() == 50 ? "normal sly" : (pet.getTrickLevel()>50 ? "very sly": "almost not sly");
-                System.out.println("I have a "+pet.getSpecies()+", he is "+pet.getAge()+" years old, he is "+msg);
+                System.out.println("I have a "+pet.getAnimalType()+", he is "+pet.getAge()+" years old, he is "+msg);
     }
 
     @Override
