@@ -27,6 +27,14 @@ public class Main {
         printCat(cats);
         //printCat(dogs); <--- compile error
 
+        ArrayList<String> originalList = new ArrayList<>();
+        originalList.add("Jane");
+        originalList.add("Bob");
+        originalList.add("Tom");
+
+        boolean hasElement = originalList.contains("Bob");
+
+
     }
 
     public static void printAnimal(List<? extends Animal> animals){
@@ -37,7 +45,7 @@ public class Main {
 
     public static void printCat(List<? super Cat> animals){
         for(Object animal : animals){
-            System.out.println("Class Name: "+ animal.getClass().getName());
+            System.out.println("Class Name: "+ animal.getClass().getName() + " - ");
         }
     }
 
